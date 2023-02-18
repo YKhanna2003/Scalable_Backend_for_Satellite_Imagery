@@ -9,7 +9,7 @@ NOTE: To get the proper bounding box coordinates,
 1. Refer to the website: https://nominatim.openstreetmap.org/ui/search.html
 2. Search the Name of the Region you wish to observe.
 3. Select from the several options provided below the search bar.
-4. Click on show map bounds on top right of the map to get the bouding box coordinates.
+4. Click on show map bounds on top right of the map to get the bounding box coordinates.
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
 eg. for observing BITS Goa, you will find the following info:
 
@@ -36,7 +36,7 @@ Pillow (Installation below)
 Note:
 1. Installation of PIL:  
 		$ pip install Pillow
-2. Make sure the 'null.jpeg' file is in the current running directory.
+2. Make sure the 'null.jpeg' file is in the current running directory. It will be used to check if the image obatined from the BING server is different from null image, if it is equal to null then there will be no entry on BING's server.
 
 ## Algorithm Introduction
 1. Determine the lowest acceptable level by all bounding box area within one tile.
