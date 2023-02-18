@@ -6,13 +6,15 @@ import numpy as np
 import urllib.request
 from TileSystem import *
 from PIL import Image
-
-
 TILE_SIZE = 256 			# number of pixels per tile per edge
 
-def getURL(quadkey):
-	# To get license_key, see https://msdn.microsoft.com/en-us/library/ff428642.aspx
+"""
+	To get license_key, see https://msdn.microsoft.com/en-us/library/ff428642.aspx
+	Only Use this license_key incase the default licence key is not working
 	license_key = "AgWTDo9SZ6TioyZeH5bXsiQBVLOJYr5J8877n_-lXu20y-K4FP39MwBEflRfLsWs"
+"""
+def getURL(quadkey):
+	license_key = "AgHer_2TL4WIP75stUJosD2217kPbu_GVYKKE27fKr0PiEdaxdRr5mWq8fmPIk8N"
 	return "http://h0.ortho.tiles.virtualearth.net/tiles/h%s.jpeg?g=131&key=%s" % (quadkey, license_key)
 
 
@@ -59,8 +61,6 @@ def nullImage(img):
 	flag = (img == Image.open('null.jpeg'))
 	return flag
 
-
-
 def findBestLevel(lat1, lon1, lat2, lon2, minlevel):
 	"""
 		Determine the level with finest resolution without missing images given the two bounding points.
@@ -75,13 +75,12 @@ def findBestLevel(lat1, lon1, lat2, lon2, minlevel):
 	"""
 	# set UPPER_SIZE as the size limit of the desired image, in case it is too large to open efficiently.
 	UPPER_SIZE = 1 << 12 		# 4096 pixels 			
-
 	l = 23
 
 	# select the level, iterated from the finest one to the lowest acceptable one
 	while l >= minlevel:
-		print ("Check quality in level: ")
-		print (l)
+		# print ("Check quality in level: ")
+		# print (l)
 		flag = True
 		tx1, ty1 = latLongToTileXY(lat1, lon1, l)
 		tx2, ty2 = latLongToTileXY(lat2, lon2, l)
@@ -102,10 +101,10 @@ def findBestLevel(lat1, lon1, lat2, lon2, minlevel):
 				curr_image = getImageFromQuadkey(curr_quadkey)
 				if nullImage(curr_image):
 					flag = False
-					print("can't find tile:")
-					print("(%d, %d)" % (x,y))
-					print("at the level:")
-					print(l)
+					# print("can't find tile:")
+					# print("(%d, %d)" % (x,y))
+					# print("at the level:")
+					# print(l)
 					break
 			if flag == False:
 				break
@@ -115,26 +114,26 @@ def findBestLevel(lat1, lon1, lat2, lon2, minlevel):
 		l = l - 1
 
 	if flag == True:
-		print("Finally at level: %d" % l)
+		print("Found the Image at level: %d" % l)
 		return l, tx1, ty1, tx2, ty2
 	else:
 		print("Error: No acceptable level. Please re-select the bounding box.")
 
-	
-
-
-
 def main():
-	## user input parameters
-	lat1 = float(sys.argv[1])
-	lon1 = float(sys.argv[2])
-	lat2 = float(sys.argv[3])
-	lon2 = float(sys.argv[4])
+	
+	input_string = input("Enter four comma-separated float values [Upper Left (Lon1,Lat1), Bottom Right (Lon2,Lat2)]:- ")
+	float_values = []
+	split_string = input_string.split(",")
+	for value in split_string:
+	    float_values.append(float(value.strip()))
+	
+	lon1 = float(float_values[0])
+	lat1 = float(float_values[1])
+	lon2 = float(float_values[2])
+	lat2 = float(float_values[3])
 
-	## determine the lowest acceptable level
 	minlevel = getLowestLevel(lat1, lon1, lat2, lon2) 
 
-	## determine the final best level
 	l, tx1, ty1, tx2, ty2 = findBestLevel(lat1, lon1, lat2, lon2, minlevel)
 
 	## generte image
@@ -150,11 +149,9 @@ def main():
 			start_y = (y - ty1) * TILE_SIZE
 			end_x = start_x + TILE_SIZE
 			end_y = start_y + TILE_SIZE
-
 			image.paste(curr_image, (int(start_x), int(start_y), int(end_x), int(end_y)))
 
 	print("Image successfully generated.")
-
 
 	## crop the image
 	px1, py1 = latLongToPixelXY(lat1, lon1, l) 		# px1, py1 is the global pixel coordinates of the upper left point
@@ -169,10 +166,9 @@ def main():
 
 	output = image.crop((d_x1, d_y1, d_x2, d_y2))
 	print("Image successfully cropped.")
-	output.save("result.jpg")
+	# filename=os.path.join('./output/', str(lon1) + " " + str(lat1)+ " " + str(lon2)+ " " + str(lat2)+".jpg")
+    # output.save(filename)
+	output.save('./output/'+str(lon1) + "-" + str(lat1)+ " to " + str(lon2)+ "-" + str(lat2)+".jpg")
 	
-
-
-
 if __name__ == '__main__':
 	main()
