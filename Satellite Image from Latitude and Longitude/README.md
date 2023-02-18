@@ -13,11 +13,11 @@ NOTE: To get the proper bounding box coordinates,
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
 eg. for observing BITS Goa, you will find the following info:
 
-map center: 15.39093,73.87794 view on osm.org
-map zoom: 15
-viewbox: 73.85366,15.39878,73.90224,15.38306
-last click: undefined
-mouse position: 15.39737,73.88954
+Map center: 15.39093,73.87794 view on osm.org
+Map zoom: 15
+Viewbox: 73.85366,15.39878,73.90224,15.38306
+Last click: undefined
+Mouse position: 15.39737,73.88954
 
 Copy the data given as 73.85366,15.39878,73.90224,15.38306 for this location.
 
