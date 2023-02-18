@@ -7,7 +7,7 @@ BING Maps API is used to download Satellite Imagery based on specific Bounding B
 
 NOTE: To get the proper bounding box coordinates, 
 1. Refer to the website: https://nominatim.openstreetmap.org/ui/search.html
-2. Search the Name of the Region you wish to observer.
+2. Search the Name of the Region you wish to observe.
 3. Select from the several options provided below the search bar.
 4. Click on show map bounds on top right of the map to get the bouding box coordinates.
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
