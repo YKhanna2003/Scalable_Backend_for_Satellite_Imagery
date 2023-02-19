@@ -38,6 +38,10 @@ Note:
 		$ pip install Pillow
 2. Make sure the 'null.jpeg' file is in the current running directory. It will be used to check if the image obatined from the BING server is different from null image, if it is equal to null then there will be no entry on BING's server.
 
+Output
+
+![alt text](https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Satellite%20Image%20from%20Latitude%20and%20Longitude/output/72.82081-18.94245%20to%2072.82688-18.94052.jpg?raw=true)
+
 ## Algorithm Introduction
 1. Determine the lowest acceptable level by all bounding box area within one tile.
 2. Determine the final best level by filtering out from fine to coarse iteratively.
