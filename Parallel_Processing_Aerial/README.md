@@ -1,10 +1,10 @@
 # Satellite-Image-Retrieval
 ## Problem and Solution: 
 For having meaningful algorithms run on satellite dataset we need to divide the dataset into small bounding boxes on which the data analysis can be done.
-Each Bounding Box is sub-divided into several boxes with two consecutive boxes having a
+Each Bounding Box is sub-divided into several boxes with two consecutive boxes having the following parameters: 
 
-**Latitude Difference:- ** 0.00197
-**Longitude Difference:- ** 0.00607
+Latitude Difference:- 0.00197
+Longitude Difference:- 0.00607
 
 -**Input:** Upper Left (Lon1,Lat1), Bottom Right (Lon2,Lat2)
 
@@ -16,7 +16,9 @@ NOTE: To get the proper bounding box coordinates,
 3. Select from the several options provided below the search bar.
 4. Click on show map bounds on top right of the map to get the bouding box coordinates.
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
-eg. for observing BITS Goa, you will find the following info:
+6. You have to run the parallel.py file here to get the divided imagery
+
+eg. for observing region around BITS Goa, you will find the following info:
 
 map center: 15.39093,73.87794 view on osm.org
 map zoom: 15
@@ -29,28 +31,12 @@ Copy the data given as 73.85366,15.39878,73.90224,15.38306 for this location.
 ## Run Instructions
 Simply open a Terminal at the project directory, run, for example:
 
-    # Example for BITS Goa Campus
-    Enter four comma-separated float values [Upper Left (Lon1,Lat1), Bottom Right (Lon2,Lat2)]:- 73.85366,15.39878,73.90224,15.38306
+    # Example for near BITS Goa Campus
+    python3 parallel.py 73.77285 15.42234 73.96717 15.35945
 
-The output desired image is then saved in output folder as '73.85366-15.39878 to 73.90224-15.38306.jpg'.
+The output desired image is then saved in output folder as divided into sevaral pieces of latdiff and longdiff.
 
-## Required Environment
-Python 3.8.10 (can test on later versions)
-Pillow (Installation below)
+NOTE: Make sure the 'null.jpeg' file is in the current running directory.
 
-Note:
-1. Installation of PIL:  
-		$ pip install Pillow
-2. Make sure the 'null.jpeg' file is in the current running directory.
-
-## Algorithm Introduction
-1. Determine the lowest acceptable level by all bounding box area within one tile.
-2. Determine the final best level by filtering out from fine to coarse iteratively.
-3. Query each tile image and paste.
-      1) Convert lat/lon to pixel coordinates.
-      2) Convert pixel coordinates to tile coordinates.
-      3) Query tile image from Bing Server.
-4. Refine and crop the generated image by pixel granularity.
-
-## Reference
-	https://msdn.microsoft.com/en-us/library/bb259689.aspx
+## Algorithm:-
+Divide each of the bigger bounding boxes to smaller bounding boxes of a specified Length and Breadth and save the images in the output folder.
