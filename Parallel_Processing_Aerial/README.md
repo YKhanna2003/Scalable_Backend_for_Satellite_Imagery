@@ -1,8 +1,13 @@
 # Satellite-Image-Retrieval
-## Problem: 
-BING Maps API is used to download Satellite Imagery based on specific Bounding Boxes, latitude and longitude of which is asked from the user.
+## Problem and Solution: 
+For having meaningful algorithms run on satellite dataset we need to divide the dataset into small bounding boxes on which the data analysis can be done.
+Each Bounding Box is sub-divided into several boxes with two consecutive boxes having a
+
+**Latitude Difference:- ** 0.00197
+**Longitude Difference:- ** 0.00607
 
 -**Input:** Upper Left (Lon1,Lat1), Bottom Right (Lon2,Lat2)
+
 -**Output:** Aerial Imagery based on the above bounding box.
 
 NOTE: To get the proper bounding box coordinates, 
