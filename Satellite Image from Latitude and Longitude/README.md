@@ -11,6 +11,9 @@ NOTE: To get the proper bounding box coordinates,
 3. Select from the several options provided below the search bar.
 4. Click on show map bounds on top right of the map to get the bounding box coordinates.
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
+
+![alt text](https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Satellite%20Image%20from%20Latitude%20and%20Longitude/images/image1.png?raw=true)
+
 eg. for observing BITS Goa, you will find the following info:
 
 Map center: 15.39093,73.87794 view on osm.org
@@ -25,6 +28,8 @@ Copy the data given as 73.85366,15.39878,73.90224,15.38306 for this location.
 Simply open a Terminal at the project directory, run, for example:
 
     # Example for BITS Goa Campus
+    python3 main.py
+    
     Enter four comma-separated float values [Upper Left (Lon1,Lat1), Bottom Right (Lon2,Lat2)]:- 73.85366,15.39878,73.90224,15.38306
 
 The output desired image is then saved in output folder as '73.85366-15.39878 to 73.90224-15.38306.jpg'.
@@ -40,7 +45,7 @@ Note:
 
 Output
 
-![alt text](https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Satellite%20Image%20from%20Latitude%20and%20Longitude/output/72.82081-18.94245%20to%2072.82688-18.94052.jpg?raw=true)
+![alt text]https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Satellite%20Image%20from%20Latitude%20and%20Longitude/images/image2.jpg?raw=true)
 
 ## Algorithm Introduction
 1. Determine the lowest acceptable level by all bounding box area within one tile.
