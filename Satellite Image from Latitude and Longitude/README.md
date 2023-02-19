@@ -7,17 +7,17 @@ BING Maps API is used to download Satellite Imagery based on specific Bounding B
 
 NOTE: To get the proper bounding box coordinates, 
 1. Refer to the website: https://nominatim.openstreetmap.org/ui/search.html
-2. Search the Name of the Region you wish to observer.
+2. Search the Name of the Region you wish to observe.
 3. Select from the several options provided below the search bar.
-4. Click on show map bounds on top right of the map to get the bouding box coordinates.
+4. Click on show map bounds on top right of the map to get the bounding box coordinates.
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
 eg. for observing BITS Goa, you will find the following info:
 
-map center: 15.39093,73.87794 view on osm.org
-map zoom: 15
-viewbox: 73.85366,15.39878,73.90224,15.38306
-last click: undefined
-mouse position: 15.39737,73.88954
+Map center: 15.39093,73.87794 view on osm.org
+Map zoom: 15
+Viewbox: 73.85366,15.39878,73.90224,15.38306
+Last click: undefined
+Mouse position: 15.39737,73.88954
 
 Copy the data given as 73.85366,15.39878,73.90224,15.38306 for this location.
 
@@ -36,7 +36,7 @@ Pillow (Installation below)
 Note:
 1. Installation of PIL:  
 		$ pip install Pillow
-2. Make sure the 'null.jpeg' file is in the current running directory.
+2. Make sure the 'null.jpeg' file is in the current running directory. It will be used to check if the image obatined from the BING server is different from null image, if it is equal to null then there will be no entry on BING's server.
 
 ## Algorithm Introduction
 1. Determine the lowest acceptable level by all bounding box area within one tile.
