@@ -18,7 +18,7 @@ NOTE: To get the proper bounding box coordinates,
 5. Copy the viewbox coordinates and input it in the main.py algorithm.
 6. You have to run the parallel.py file here to get the divided imagery
 
-![alt text]([https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Satellite%20Image%20from%20Latitude%20and%20Longitude/images/image1.png](https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Parallel_Processing_Aerial/images/image1.png)?raw=true)
+![alt text](https://github.com/YKhanna2003/Algorithms_On_Satellite_Imagery/blob/main/Parallel_Processing_Aerial/images/image1.png?raw=true)
 
 eg. for observing region around BITS Goa, you will find the following info:
 
