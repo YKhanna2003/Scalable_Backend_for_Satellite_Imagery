@@ -9,6 +9,8 @@ Folder 2: Obatin the imagery for a overall region and break the image into small
 
 Author: Yash Khanna
 
+Google Map API Functionality: https://colab.research.google.com/drive/1vjz6VctooUG6jJHIdlRoRdWXiHlQesqo?usp=sharing
+
 Cheers!
 
 NOTE: During running any algorithm in the mentioned Repo, if you face error having keywork "HTTPS Connection" in it, try to re-run the algorithm, the error is generated due to the API failing due to weak internet connection.
