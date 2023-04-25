@@ -67,6 +67,7 @@ def nullImage(img):
 
 def findBestLevel(lat1, lon1, lat2, lon2, minlevel):
 	"""
+	Finding the best level
 		Determine the level with finest resolution without missing images given the two bounding points.
 	Input:
 		lat1, lon1 		the upper left point's lat/lon coordinates
@@ -186,7 +187,7 @@ def main():
 	savepath='./output/'+str(lon1) + " " + str(lat1)+ " " + str(lon2)+ " " + str(lat2)+".jpg"
 	output.save(savepath)
 	img = mpimg.imread(savepath)
-	nArray.flags.writeable = True
+	#nArray.flags.writeable = True
 	predictdeforestation(img)
 	
 if __name__ == '__main__':
