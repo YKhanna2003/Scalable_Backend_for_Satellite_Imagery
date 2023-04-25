@@ -5,7 +5,7 @@ Project Status: Ongoing, can expect more commits soon. Feel free to use the repo
 
 Folder 1: Obtain the satellite imagery from the given latitude and longitude based on BING Maps API.
 
-Folder 2: Obatin the imagery for a overall region and break the image into smaller images of specified dimensions.
+Folder 2: Obtain the imagery for a overall region and break the image into smaller images of specified dimensions.
 
 Author: Yash Khanna
 
