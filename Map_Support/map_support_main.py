@@ -71,7 +71,7 @@ if os.path.isfile(prefs_path):
     BRlat,TLlat,TLlon,BRlon=location_selector()
     print("Coordinate Information:")
     print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
-    zoom=input("Enter the Zoom Level:- ")
+    zoom=input("Enter the Zoom Level [Maximum 20, Higher Zoom Levels take larger amounts of space (20 Level : 200 MBs)]:- ")
     run(BRlat,BRlon,TLlat,TLlon,zoom)
 
 else:
