@@ -78,3 +78,8 @@ else:
     with open(prefs_path, 'w', encoding='utf-8') as f:
         json.dump(default_prefs, f, indent=2, ensure_ascii=False)
     print(f'Preferences file created in {prefs_path}')
+    BRlat,TLlat,TLlon,BRlon=location_selector()
+    print("Coordinate Information:")
+    print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
+    zoom=input("Enter the Zoom Level:- ")
+    run(BRlat,BRlon,TLlat,TLlon,zoom)
