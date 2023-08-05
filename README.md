@@ -4,7 +4,9 @@ Algorithm Application on Satellite Imagery, demonstrating Data Analysis and Algo
 Project Status: Ongoing, can expect more commits soon. Feel free to use the repository for your development, try to integrate your own API key instead of using mine as the program might break if the API key expires.
 
 Folder 1: Obtain the satellite imagery from the given latitude and longitude based on BING Maps API.
+
 Folder 2: Obtain the imagery for a overall region and break the image into smaller images of specified dimensions.
+
 Folder 3: A recent addition allowing MAP Support now. You can input any physical address and you will get the image at your desired zoom level. Try for yourself in Map_Support folder.
 
 Author: Yash Khanna
