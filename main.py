@@ -23,7 +23,8 @@ def menu_functions(menu_input):
     elif menu_input == higher_definition_huge_size:
         print("Running this file python3 ./Map_Support/hdmain.py")
         os.system('python3 ./Map_Support/hdmain.py')
-        print("File Run Successfully")
+        input("Operation Completed, press enter to continue")
+        print_menu(False)
     else:
         print_menu(True)
     return 0
