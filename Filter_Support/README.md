@@ -1,6 +1,7 @@
 Filter Support for satellite imagery. This module will be used to carry out image processing operations on satellite images.
 
-Filter Menu Includes: <br />
+Filter Menu Includes:
+
 0. Exit the Filter Menu <br />
 1. Select/Change Image you wish to work on from List Chosen <br />
 2. Print the Image <br />
