@@ -1,0 +1,24 @@
+Please Choose from the options:
+
+0. Exit the Filter Menu
+1. Select/Change Image you wish to work on from List Chosen
+2. Print the Image
+3. Print Path of Image Chosen
+4. Reselect the List of Files
+5. Print List of Selected Files
+6. Salt and Pepper (Converted to Grayscale Image)
+7. Custom Filter (Please save the filter in the custom_filter.txt)
+8. Sharpen the image
+9. Gaussian Filter
+10. Median Filter
+11. Maximum Filter
+12. Minimum Filter
+13. Emboss Filter
+14. Prewitt Horizontal
+15. Prewitt Vertical
+16. Sobel Horizontal
+17. Sobel Vertical
+18. High Pass Filter
+19. Low Pass Filter
+20. Laplacian Filter
+21. Motion Blur Filter 
