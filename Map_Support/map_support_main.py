@@ -67,19 +67,23 @@ def run(BRlat,BRlon,TLlat,TLlon,zoom):
     cv2.imwrite(os.path.join(prefs['dir'], name), img)
     print(f'Saved as {name}')
 
-if os.path.isfile(prefs_path):
-    BRlat,TLlat,TLlon,BRlon=location_selector()
-    print("Coordinate Information:")
-    print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
-    zoom=input("Enter the Zoom Level [Maximum 20, Higher Zoom Levels take larger amounts of space (20 Level : 200 MBs)]:- ")
-    run(BRlat,BRlon,TLlat,TLlon,zoom)
+def main():
+    if os.path.isfile(prefs_path):
+        BRlat,TLlat,TLlon,BRlon=location_selector()
+        print("Coordinate Information:")
+        print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
+        zoom=input("Enter the Zoom Level [Maximum 20, Higher Zoom Levels take larger amounts of space (20 Level : 200 MBs)]:- ")
+        run(BRlat,BRlon,TLlat,TLlon,zoom)
 
-else:
-    with open(prefs_path, 'w', encoding='utf-8') as f:
-        json.dump(default_prefs, f, indent=2, ensure_ascii=False)
-    print(f'Preferences file created in {prefs_path}')
-    BRlat,TLlat,TLlon,BRlon=location_selector()
-    print("Coordinate Information:")
-    print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
-    zoom=input("Enter the Zoom Level:- ")
-    run(BRlat,BRlon,TLlat,TLlon,zoom)
+    else:
+        with open(prefs_path, 'w', encoding='utf-8') as f:
+            json.dump(default_prefs, f, indent=2, ensure_ascii=False)
+        print(f'Preferences file created in {prefs_path}')
+        BRlat,TLlat,TLlon,BRlon=location_selector()
+        print("Coordinate Information:")
+        print("Bottom Right Latitude \t= {}\nBottom Right Longitude \t= {}\nTop Left Latitude \t= {}\nTop Left Longitude \t= {}".format(BRlat,BRlon,TLlat,TLlon))
+        zoom=input("Enter the Zoom Level:- ")
+        run(BRlat,BRlon,TLlat,TLlon,zoom)
+
+if __name__ == "__main__":
+    main()

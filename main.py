@@ -3,6 +3,8 @@ import os
 print_menu_again = 0
 menu_exit_program = 1
 higher_definition_huge_size = 2
+specific_lon_lat = 3
+filters = 4
 
 def print_menu(invalid_entry):
     os.system('cls')
@@ -13,6 +15,7 @@ def print_menu(invalid_entry):
     menu_file = open("menu_file.txt","r")
     print(menu_file.read())
     menu_file.close()
+    print("\nEnter your choice:- ",end="")
 
 def menu_functions(menu_input):
     if menu_input == menu_exit_program:
@@ -24,6 +27,12 @@ def menu_functions(menu_input):
         print("Running this file python3 ./Map_Support/map_support_main.py")
         os.system('python3 ./Map_Support/map_support_main.py')
         input("Operation Completed, press enter to continue")
+        print_menu(False)
+    elif menu_input == specific_lon_lat:
+        os.system('python3 ./Map_Support/specific_lat_lon_main.py')
+        print_menu(False)
+    elif menu_input == filters:
+        os.system('cd Filter_Support && python3 filter_support_main.py')
         print_menu(False)
     else:
         print_menu(True)
