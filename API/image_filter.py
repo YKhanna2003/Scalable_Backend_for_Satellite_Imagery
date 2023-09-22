@@ -26,11 +26,11 @@ def print_specific_image(img):
 # 1 - Color, 0 - Grayscale, -1 - Unchanged (As-Is)
 # Incase of Error NULL is returned
 
-def print_image(file_name_address,mode,print_it):
+def array_image(input_image_path,mode,print_it=False):
     checker = [0,1,-1]
     if mode not in checker:
         return None
-    img = cv2.imread(file_name_address,mode)
+    img = cv2.imread(input_image_path,mode)
     if img is None:
         return None
     if print_it:
@@ -42,16 +42,14 @@ def print_image(file_name_address,mode,print_it):
 # Input:- File Address and whether to print it or not
 # Output:- Salt and Pepper image returned
 
-def salt_and_pepper(file_name_address,print_it):
-    img = cv2.imread(file_name_address,0)
+def salt_and_pepper(input_image_path,output_image_path):
+    img = cv2.imread(input_image_path,0)
     if img is None:
         return None
     rows = len(img)
     columns = len(img[0])
     salt_img=add_noise(img)
-    if print_it:
-        print_specific_image(salt_img)
-    return salt_img
+    cv2.imwrite(output_image_path, salt_img)
 
 # Function:- Custom Filter Application
 # Input:- File Addresses of input and output images, custom filter in text file

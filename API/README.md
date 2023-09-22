@@ -1,9 +1,11 @@
-# Image Processing API README
+# Filter API
 
 This repository contains a collection of Python functions for various image processing tasks. These functions use the OpenCV library and provide different image filtering and manipulation techniques.
 
 ## Table of Contents:
 1. Functions
+    - Convert Image to Numpy Array
+    - Salt and Pepper
     - Custom Filter
     - Gaussian Filter
     - Median Filter
@@ -15,14 +17,36 @@ This repository contains a collection of Python functions for various image proc
 2. Usage
 3. Examples
 4. Contributing
-5. License
 
 Functions:
+
+Conversion to Array
+Converts the image into array based on mode input, -1,0,1.
+
+    -1  :- As it is.
+    0   :- Black and White.
+    1   :- Color.
+
+    def array_image(input_image_path,mode,print_it=False):
+        # ...
+    
+    - `input_image_path`: Path to the input image.
+    - `mode`: Mode in which image is returned.
+    - `print_it`: Print needed or not.
+
+Salt and Pepper:
+Applies a randomized salt and pepper filter to an image.
+
+    def salt_and_pepper(input_image_path, output_image_path):
+        # ...
+
+    - `input_image_path`: Path to the input image.
+    - `output_image_path`: Path to the output image.
 
 Custom Filter:
 Applies a custom filter to an image using a user-defined filter matrix.
 
-    def apply_custom_filter(input_image_path, output_image_path, custom_filter_path):
+    def custom_filter(input_image_path, output_image_path, custom_filter_path):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -32,7 +56,7 @@ Applies a custom filter to an image using a user-defined filter matrix.
 Gaussian Filter:
 Applies a Gaussian filter to an image for blurring or smoothing.
 
-    def apply_gaussian_filter(input_image_path, output_image_path, kernel_size, sigma_x):
+    def gaussian(input_image_path, output_image_path, kernel_size, sigma_x):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -43,7 +67,7 @@ Applies a Gaussian filter to an image for blurring or smoothing.
 Median Filter:
 Applies a median filter to an image for noise reduction.
 
-    def apply_median_filter(input_image_path, output_image_path, kernel_size):
+    def median(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -53,7 +77,7 @@ Applies a median filter to an image for noise reduction.
 Max Filter:
 Applies a max filter (dilation) to an image.
 
-    def apply_max_filter(input_image_path, output_image_path, kernel_size):
+    def max(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -63,7 +87,7 @@ Applies a max filter (dilation) to an image.
 Min Filter:
 Applies a min filter (erosion) to an image.
 
-    def apply_min_filter(input_image_path, output_image_path, kernel_size):
+    def min(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -73,7 +97,7 @@ Applies a min filter (erosion) to an image.
 High-Pass Filter:
 Applies a high-pass filter to an image to enhance edges and fine details.
 
-    def apply_high_pass_filter(input_image_path, output_image_path, kernel_size):
+    def high_pass(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -83,7 +107,7 @@ Applies a high-pass filter to an image to enhance edges and fine details.
 Low-Pass Filter:
 Applies a low-pass filter to an image to reduce noise and smooth the image.
 
-    def apply_low_pass_filter(input_image_path, output_image_path, kernel_size):
+    def low_pass(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -93,7 +117,7 @@ Applies a low-pass filter to an image to reduce noise and smooth the image.
 Motion Blur:
 Applies a motion blur effect to an image.
 
-    def apply_motion_blur(input_image_path, output_image_path, kernel_size):
+    def motion_blur(input_image_path, output_image_path, kernel_size):
         # ...
 
     - `input_image_path`: Path to the input image.
@@ -105,9 +129,7 @@ Usage:
 
     git clone https://github.com/your-username/image-processing-functions.git
 
-2. Install the required libraries, preferably in a virtual environment:
-
-    pip install -r requirements.txt
+2. Install the required libraries, preferably in a virtual environment.
 
 3. Use the functions in your Python scripts as shown in the examples below.
 
@@ -115,32 +137,31 @@ Examples:
 
 Here are some examples of how to use the image processing functions:
 
+    from API import image_filter
+
     # Example usage of custom filter
-    apply_custom_filter("input_image.jpg", "custom_filtered_image.jpg", "custom_filter.txt")
+    image_filter.custom_filter("input_image.jpg", "custom_filtered_image.jpg", "custom_filter.txt")
 
     # Example usage of Gaussian filter
-    apply_gaussian_filter("input_image.jpg", "gaussian_filtered_image.jpg", kernel_size=5, sigma_x=0)
+    image_filter.gaussian("input_image.jpg", "gaussian_filtered_image.jpg", kernel_size=5, sigma_x=0)
 
     # Example usage of median filter
-    apply_median_filter("input_image.jpg", "median_filtered_image.jpg", kernel_size=3)
+    image_filter.median("input_image.jpg", "median_filtered_image.jpg", kernel_size=3)
 
     # Example usage of max filter
-    apply_max_filter("input_image.jpg", "max_filtered_image.jpg", kernel_size=5)
+    image_filter.max("input_image.jpg", "max_filtered_image.jpg", kernel_size=5)
 
     # Example usage of min filter
-    apply_min_filter("input_image.jpg", "min_filtered_image.jpg", kernel_size=5)
+    image_filter.min("input_image.jpg", "min_filtered_image.jpg", kernel_size=5)
 
     # Example usage of high-pass filter
-    apply_high_pass_filter("input_image.jpg", "high_pass_filtered_image.jpg", kernel_size=5)
+    image_filter.high_pass("input_image.jpg", "high_pass_filtered_image.jpg", kernel_size=5)
 
     # Example usage of low-pass filter
-    apply_low_pass_filter("input_image.jpg", "low_pass_filtered_image.jpg", kernel_size=5)
+    image_filter.low_pass("input_image.jpg", "low_pass_filtered_image.jpg", kernel_size=5)
 
     # Example usage of motion blur
-    apply_motion_blur("input_image.jpg", "motion_blurred_image.jpg", kernel_size=15)
+    image_filter.motion_blur("input_image.jpg", "motion_blurred_image.jpg", kernel_size=15)
 
 Contributing:
 If you have suggestions, improvements, or additional image processing functions to contribute, please feel free to open an issue or submit a pull request.
-
-License:
-This project is licensed under the MIT License - see the LICENSE file for details.
