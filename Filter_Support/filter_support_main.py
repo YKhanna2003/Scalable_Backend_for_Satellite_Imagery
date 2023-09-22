@@ -207,7 +207,7 @@ def main():
         menu_input = int(input("Enter your Choice:- "))
         os.system("cls")
         match menu_input:
-            case 0 : break
+            case 0: break
             case 1: select_an_image()
             case 2: print_image()
             case 3: print_file_address()
