@@ -1,8 +1,8 @@
-Image Processing API README
+#Image Processing API README
 
 This repository contains a collection of Python functions for various image processing tasks. These functions use the OpenCV library and provide different image filtering and manipulation techniques.
 
-Table of Contents:
+##Table of Contents:
 1. Functions
     - Custom Filter
     - Gaussian Filter
