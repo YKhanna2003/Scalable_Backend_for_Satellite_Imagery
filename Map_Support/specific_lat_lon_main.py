@@ -94,7 +94,6 @@ def location_selector():
         return dic[location_menu_input]
 
 def main():
-    print("We will work with the specific case now, huh")
     if not os.path.isfile(prefs_path):
         with open(prefs_path, 'w', encoding='utf-8') as f:
             json.dump(default_prefs, f, indent=2, ensure_ascii=False)

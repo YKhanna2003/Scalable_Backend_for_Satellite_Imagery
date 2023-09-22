@@ -11,7 +11,7 @@ def print_menu(invalid_entry):
     if invalid_entry:
         print("Invalid Entry, please enter from the following\n")
     else:
-        print("What you thinking today?\n")
+        print("What are you working on today?\n")
     menu_file = open("menu_file.txt","r")
     print(menu_file.read())
     menu_file.close()
@@ -21,12 +21,8 @@ def menu_functions(menu_input):
     if menu_input == menu_exit_program:
         os.system('cls')
         return -1
-    elif menu_input == print_menu_again:
-        print_menu(False)
     elif menu_input == higher_definition_huge_size:
-        print("Running this file python3 ./Map_Support/map_support_main.py")
         os.system('python3 ./Map_Support/map_support_main.py')
-        input("Operation Completed, press enter to continue")
         print_menu(False)
     elif menu_input == specific_lon_lat:
         os.system('python3 ./Map_Support/specific_lat_lon_main.py')

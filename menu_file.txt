@@ -1,5 +1,4 @@
-0. Print Menu Again
 1. Exit
-2. Higher Definition Imagery [Known Places] (Size Constraint) [Work in Progress]
+2. Higher Definition Imagery [Known Places]
 3. Specific Longitude and Latitude
 4. Trigger Filters
