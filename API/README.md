@@ -18,7 +18,7 @@ This repository contains a collection of Python functions for various image proc
 3. Examples
 4. Contributing
 
-Functions:
+## Functions:
 
 Conversion to Array
 Converts the image into array based on mode input, -1,0,1.
@@ -124,7 +124,8 @@ Applies a motion blur effect to an image.
     - `output_image_path`: Path to save the motion-blurred output image.
     - `kernel_size`: Size of the motion blur kernel.
 
-Usage:
+## Usage:
+
 1. Clone this repository to your local machine:
 
     git clone https://github.com/your-username/image-processing-functions.git
@@ -133,7 +134,7 @@ Usage:
 
 3. Use the functions in your Python scripts as shown in the examples below.
 
-Examples:
+## Examples:
 
 Here are some examples of how to use the image processing functions:
 
@@ -163,5 +164,6 @@ Here are some examples of how to use the image processing functions:
     # Example usage of motion blur
     image_filter.motion_blur("input_image.jpg", "motion_blurred_image.jpg", kernel_size=15)
 
-Contributing:
+## Contributing:
+
 If you have suggestions, improvements, or additional image processing functions to contribute, please feel free to open an issue or submit a pull request.
