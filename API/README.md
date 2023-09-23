@@ -167,3 +167,82 @@ Here are some examples of how to use the image processing functions:
 ## Contributing:
 
 If you have suggestions, improvements, or additional image processing functions to contribute, please feel free to open an issue or submit a pull request.
+
+# Satellite Image Downloader and Location Selector
+File:- rgb_download.py
+
+This Python script provides functionalities to download satellite images from various sources based on user-defined coordinates or addresses. It also includes a location selector to choose specific locations and download corresponding satellite images.
+
+## Features
+
+- Download satellite images by specifying coordinates (latitude and longitude) and zoom level.
+- Select locations by providing an address, view multiple locations, and download images accordingly.
+- Customizable preferences for download sources, tile size, and more.
+
+## Prerequisites
+
+Before using the script, make sure you have the following prerequisites:
+
+- Python 3.x
+- Required Python libraries: numpy, requests, geopy, opencv-python
+
+You can install these libraries using pip:
+
+pip install numpy requests geopy opencv-python
+
+## Usage
+
+### Location Selector
+
+To use the location selector for downloading satellite images:
+
+1. Run the script.
+2. Enter the location (address) you want to search for.
+3. The script will display a list of matching locations with coordinates and addresses.
+4. Select a location from the list by entering the corresponding S.No.
+5. Enter the desired zoom level for the satellite image.
+6. The script will download and save the satellite image.
+
+### Specific Coordinate
+Download a satellite image for specific coordinates.
+
+    def specific_coordinate(BRlat, BRlon, TLlat, TLlon, zoom, output_file_name):
+        # ...
+
+    - `BRlat`: Latitude of Bottom Right for desired bounding box.
+    - `BRlon`: Longitude of Bottom Right for desired bounding box.
+    - `TLlat`: Latitude of Top Left for desired bounding box.
+    - `TLlon`: Longitude of Top Left for desired bounding box.
+    - `output_file_name`: Name for output file/saved file.
+    - `zoom`: Zoom level for the bounding box.
+
+### Location Listing
+Location Listing based on address as an argument.
+
+    def obtain_location_list(address):
+        # ...
+    - `address`: Latitude of Bottom Right for desired bounding box.
+    Returns:- List of locations based on the address input.
+
+## Preferences
+
+You can customize the download preferences by modifying the preferences.json file. The following preferences are available:
+
+- url: URL template for downloading satellite tiles.
+- tile_size: Size of the satellite tiles (e.g., 256).
+- tile_format: Format of the satellite tiles (e.g., 'jpg' or 'png').
+- dir: Directory to store downloaded images.
+- headers: HTTP headers for tile requests.
+- tl: Top-left coordinate for downloading a specific region.
+- br: Bottom-right coordinate for downloading a specific region.
+- zoom: Zoom level for downloading a specific region.
+
+## License
+
+This script is released under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+
+This script utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.
+
+Feel free to contribute to this project, report issues, or suggest improvements.

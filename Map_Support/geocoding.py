@@ -33,7 +33,7 @@ def print_list(location_list):
             while addresscovered<len(location.address):
                 print("| {:>5} | {:>64} | {:>48} |".format("",location.address[addresscovered:addresscovered+64],""))
                 addresscovered+=64
-            dic[i]=location.raw['boundingbox']
+            #dic[i]=location.raw['boundingbox']
             i=i+1
             print("| {:>5} | {:>64} | {:>48} |".format("","",""))
         else:
