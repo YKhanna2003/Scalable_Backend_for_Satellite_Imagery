@@ -35,7 +35,7 @@ default_prefs = {
         'zoom': ''
     }
 
-# Function:- Convert List to Space Separated String
+# Support Function:- Convert List to Space Separated String
 # Input:- List to be converted.
 # Return:- Space separated elements string.
 def listToString(list):
@@ -44,7 +44,7 @@ def listToString(list):
         str1 += ele + " "
     return str1
 
-# Function:- Print List of locations present in location_list in a well-formatted manner
+# Support Function:- Print List of locations present in location_list in a well-formatted manner
 # Input:- Location List having several attributes (including coordinates and address)
 # Output:- Prints the location in a well formatted manner.
 # Return:- Dictionary containing information for all locations. 
@@ -83,7 +83,7 @@ def print_list(location_list):
     print("")
     return dic
 
-# Function:- Location Selector responsible for searching for location coordinates based on user input.
+# Support Function:- Location Selector responsible for searching for location coordinates based on user input.
 # Input:- No Input, user is asked for input during runtime.
 # Output:- Prints the Locations in a formatted manner, calls print_list.
 # Return:- Return Specific Location information based on user input.

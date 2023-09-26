@@ -1,3 +1,87 @@
+# Image Processor Documentation
+
+The Image Processor is a Python class designed to perform various operations on images, such as dividing images into chunks, applying filters to chunks, combining chunks, and more. This README provides comprehensive documentation for the class and its functions.
+
+## Getting Started
+
+To use the Image Processor, follow these steps:
+
+1. Create an instance of the ImageProcessor class by specifying the path to the original image:
+
+   from image_processor import ImageProcessor
+
+   Replace 'input_image.jpg' with your image file path
+   processor = ImageProcessor("input_image.jpg")
+
+2. Use this instance created to call the inbuilt functions from the class.
+   - def print_original_path(self)
+   - def divide_into_chunks(self,chunk_size)
+   - def delete_chunks(self):
+   - def apply_function_on_specific_chunks(self,chunk_id, custom_filter):
+   - def apply_function_on_multiple_chunks(self,chunk_ids, custom_filter):
+   - def print_chunk(self,chunk_id):
+   - def return_map(self):
+   - def combine_image(self):
+
+## Functions
+### Divide the original image into smaller chunks.
+This function divides the original image into smaller chunks and saves them as individual files. Chunks are saved in the 'image_chunks' directory, and a text file called 'chunk_ids.txt' is created to store the IDs of the chunks.
+
+    def divide_into_chunks(self,chunk_size):
+        # ...
+
+    - chunk_size (optional): Specify the size of each chunk.
+    processor.divide_into_chunks(chunk_size=100)
+
+### Delete Chunks
+This function deletes chunks based on the IDs listed in 'chunk_ids.txt'.
+    def delete_chunks(self):
+        # ...
+
+    processor.delete_chunks()
+
+### Apply filter function on specific chunk
+This function applies a custom filter function to a specific chunk identified by its ID. The filtered chunk is saved in the 'filtered_chunks' directory.
+
+    def apply_function_on_specific_chunks(self,chunk_id, custom_filter):
+        # ...
+    - chunk_id: Specify the ID of the chunk.
+    - custom_filter: Implement a custom filter function that takes a chunk as input and returns the filtered chunk.
+
+    def custom_filter(chunk):
+        Implement your custom filter logic here
+        return chunk
+
+    processor.apply_function_on_specific_chunk("chunk_0_0", custom_filter)
+
+### Apply filter function on multiple chunks
+This function applies a custom filter function to multiple chunks identified by their IDs.
+    
+    def apply_function_on_multiple_chunks(self,chunk_ids, custom_filter):
+        # ...
+    - chunk_ids: Specify a list of chunk IDs.
+    - custom_filter: Implement a custom filter function that takes a chunk as input and returns the filtered chunk.
+
+   chunk_ids = ["chunk_0_0", "chunk_1_0"]
+   processor.apply_function_on_multiple_chunks(chunk_ids, custom_filter)
+
+### Combining Chunks
+This function combines the saved chunks to recreate the original image. It combines chunks both vertically and horizontally using hstack and vstack techniques.
+    
+    def combine_image(self):
+        # ...
+
+    processor.combine_chunks()
+
+### Printing Chunks
+This function displays an image associated with a specific chunk ID.
+
+    def combine_image(self):
+        # ...
+    
+    - chunk_id: Specify the chunk ID to display.
+    processor.print_chunk("chunk_0_0")
+
 # Filter API
 
 This repository contains a collection of Python functions for various image processing tasks. These functions use the OpenCV library and provide different image filtering and manipulation techniques.
