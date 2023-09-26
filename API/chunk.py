@@ -291,6 +291,8 @@ class ImageProcessor:
         cv2.imwrite("Final Image.jpg",imgg)
         return True 
 
+"""
+USAGE:-
 if __name__ == "__main__":
     img = ImageProcessor("example.jpg")
     print(img.divide_into_chunks(100))
@@ -299,9 +301,6 @@ if __name__ == "__main__":
         return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     print(img.apply_function_on_specific_chunks("chunk_0_0",custom_filter))
     print(img.apply_function_on_multiple_chunks(["chunk_0_1","chunk_0_2","chunk_0_3"],custom_filter))
-    # print(img.print_chunk("chunk_0_0"))
-    input("Press Enter")
     print(img.return_map())
-    #print(img.delete_chunks())
-    print("\n\n\n\n\n\n\n COMBINING THINGS\n\n\n")
     print(img.combine_image())
+"""
