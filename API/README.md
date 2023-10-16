@@ -321,16 +321,6 @@ You can customize the download preferences by modifying the preferences.json fil
 - br: Bottom-right coordinate for downloading a specific region.
 - zoom: Zoom level for downloading a specific region.
 
-## License
-
-This script is released under the MIT License. See the LICENSE file for details.
-
-## Acknowledgments
-
-This script utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.
-
-Feel free to contribute to this project, report issues, or suggest improvements.
-
 # Multi-Band Landsat Data Retrieval and Download
 
 This Python script allows you to search for and download multi-band satellite imagery data using the USGS API. It offers a range of functions to interact with the API, search for scenes, select a specific scene, and download the desired scene data.
@@ -441,3 +431,13 @@ The Multi_Band class is the core component of this script, providing functionali
         Returns all stored scene information.
 
 This documentation provides detailed information on how to use and interact with the Multi_Band class and its methods for Landsat data retrieval and download. You can further customize this documentation to include examples, troubleshooting tips, and additional details as needed.
+
+## License
+
+This script is released under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+
+This script utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.
+
+Feel free to contribute to this project, report issues, or suggest improvements.
