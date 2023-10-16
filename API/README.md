@@ -330,3 +330,114 @@ This script is released under the MIT License. See the LICENSE file for details.
 This script utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.
 
 Feel free to contribute to this project, report issues, or suggest improvements.
+
+# Multi-Band Landsat Data Retrieval and Download
+
+This Python script allows you to search for and download multi-band satellite imagery data using the USGS API. It offers a range of functions to interact with the API, search for scenes, select a specific scene, and download the desired scene data.
+
+## Installation:
+To use this script, you'll need to install the necessary Python packages. Run the following command to install the required packages:
+
+    pip install landsatxplore shapely
+
+## Usage:
+To use the script, you need to create an instance of the Multi_Band class and provide your Landsat API credentials, geographic information, and other parameters. Below is an example of how to use the script:
+
+# Usage Example
+    username = "your_username_here"
+    password = "your_password_here"
+    m = Multi_Band(username, password)
+    m.geographic_info(15.39104765, 73.87800155288005, '1995-01-01', '1995-10-01', 10)
+    m.search_scenes('landsat_tm_c2_l1')
+    m.search_all_datasets()
+    m.sceneid()
+    scene_id = m.select_scene()
+    m.json_sceneinfo(scene_id, 'data.json')
+    m.download_scene(scene_id, "./data")
+
+# Class: Multi_Band
+
+The Multi_Band class is the core component of this script, providing functionality to interact with the Landsat API, search for scenes, and download data.
+
+    Constructor: __init__(self, username, password)
+    Parameters:
+        - username (str): Your Landsat API username.
+        - password (str): Your Landsat API password.
+    
+    Description:
+        Initializes the Multi_Band class with the provided API credentials.
+
+    Private Method: __json_serial(self, obj)
+    Parameters:
+        - obj: An object to be serialized.
+    
+    Description:
+        A private method used for serializing objects for JSON conversion.
+
+    Method: geographic_info(self, latitude, longitude, start_date, end_date, max_cloud_cover)
+    Parameters:
+        - latitude (float): The latitude coordinate of the geographic area of interest.
+        - longitude (float): The longitude coordinate of the geographic area of interest.
+        - start_date (str): The start date for the scene search (e.g., 'yyyy-mm-dd').
+        - end_date (str): The end date for the scene search (e.g., 'yyyy-mm-dd').
+        - max_cloud_cover (int): The maximum acceptable cloud cover percentage.
+
+    Description:
+        Stores the geographic information for the scene search.
+
+    Method: search_scenes(self, dataset_name)
+    Parameters:
+        - dataset_name (str): The name of the Landsat dataset to search within.
+
+    Description:
+        Searches for scenes based on the provided dataset name and geographic information.
+
+    Method: sceneid(self)
+
+    Description:
+        Displays the available scene IDs.
+
+    Method: json_sceneinfo(self, scene_id, json_file_path)
+    Parameters:
+        - scene_id (str): The ID of the scene for which you want to export information.
+        - json_file_path (str): The path to the JSON file to store scene information.
+
+    Description:
+        Exports the scene information to a JSON file.
+
+    Method: return_info(self)
+
+    Description:
+        Returns stored geographic information.
+
+    Method: search_all_datasets(self)
+
+    Description:
+        Searches for scenes in all available datasets.
+
+    Method: select_scene(self)
+
+    Description:
+        Prompts the user to select a scene from the available scene IDs.
+
+    Private Method: __get_user_choice(self, menu_items)
+    Parameters:
+        - menu_items (list): A list of items to choose from.
+
+    Description:
+        A private method to get the user's choice for scene selection.
+
+    Method: download_scene(self, scene_id, output_dir)
+    Parameters:
+        - scene_id (str): The ID of the scene to download.
+        - output_dir (str): The directory where the scene data should be saved.
+
+    Description:
+        Downloads the selected scene to the specified output directory.
+
+    Method: return_all_scene_info(self)
+
+    Description:
+        Returns all stored scene information.
+
+This documentation provides detailed information on how to use and interact with the Multi_Band class and its methods for Landsat data retrieval and download. You can further customize this documentation to include examples, troubleshooting tips, and additional details as needed.
