@@ -1,4 +1,4 @@
-# Image Processor Documentation
+# Class: Image Processor
 
 The Image Processor is a Python class designed to perform various operations on images, such as dividing images into chunks, applying filters to chunks, combining chunks, and more. This README provides comprehensive documentation for the class and its functions.
 
@@ -82,7 +82,7 @@ This function displays an image associated with a specific chunk ID.
     - chunk_id: Specify the chunk ID to display.
     processor.print_chunk("chunk_0_0")
 
-# Filter API
+# Filter Functionality
 
 This repository contains a collection of Python functions for various image processing tasks. These functions use the OpenCV library and provide different image filtering and manipulation techniques.
 
