@@ -44,7 +44,7 @@ Refer to the API folder for more detailed documentation.
 
 ## License
 
-This script is released under the MIT License. See the LICENSE file for details.
+This script is released under the MIT License.
 
 ## Acknowledgments
 
