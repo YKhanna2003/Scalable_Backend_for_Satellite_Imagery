@@ -18,10 +18,9 @@ The project involves providing the user access to multi-spectral satellite image
         - def combine_image(self)
 
 2. Image Filtering
-    - File: image_filter.py
-    
-    Description: API to allow the user to apply filters on chunks or whole image.
 
+    File: image_filter.py
+    Description: API to allow the user to apply filters on chunks or whole image.
     The following are the functions offered:
         - def array_image(input_image_path,mode,print_it=False):
         - def salt_and_pepper(input_image_path, output_image_path):
