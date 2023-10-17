@@ -16,21 +16,21 @@ Description: API to divide and work on specific chunks of the image. This involv
         - def apply_function_on_multiple_chunks(self,chunk_ids, custom_filter)
         - def combine_image(self)
 
-2. Image Filtering
+### Image Filtering
+File: image_filter.py
+Description: API to allow the user to apply filters on chunks or whole image.
 
-    File: image_filter.py
-    Description: API to allow the user to apply filters on chunks or whole image.
     The following are the functions offered:
-        - def array_image(input_image_path,mode,print_it=False):
-        - def salt_and_pepper(input_image_path, output_image_path):
-        - def custom_filter(input_image_path, output_image_path, custom_filter_path):
-        - def gaussian(input_image_path, output_image_path, kernel_size, sigma_x):
-        - def median(input_image_path, output_image_path, kernel_size):
-        - def max(input_image_path, output_image_path, kernel_size):
-        - def min(input_image_path, output_image_path, kernel_size):
-        - def high_pass(input_image_path, output_image_path, kernel_size):
-        - def low_pass(input_image_path, output_image_path, kernel_size):
-        - def motion_blur(input_image_path, output_image_path, kernel_size):
+        1.  def array_image(input_image_path,mode,print_it=False):
+        2.  def salt_and_pepper(input_image_path, output_image_path):
+        3.  def custom_filter(input_image_path, output_image_path, custom_filter_path):
+        4.  def gaussian(input_image_path, output_image_path, kernel_size, sigma_x):
+        5.  def median(input_image_path, output_image_path, kernel_size):
+        6.  def max(input_image_path, output_image_path, kernel_size):
+        7.  def min(input_image_path, output_image_path, kernel_size):
+        8.  def high_pass(input_image_path, output_image_path, kernel_size):
+        9.  def low_pass(input_image_path, output_image_path, kernel_size):
+        10. def motion_blur(input_image_path, output_image_path, kernel_size):
 
 3. Multi-Spectral Satellite Image
     - File: 
