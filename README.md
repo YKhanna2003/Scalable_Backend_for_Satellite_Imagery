@@ -4,10 +4,9 @@ The project involves providing the user access to multi-spectral satellite image
 
 ## API Content
 
-1. Chunk Processing
-    - File: chunk_processing.py
-    
-    Description: API to divide and work on specific chunks of the image. This involves ImageProcessor class object creation with several functionalities to apply on chunks.
+### Chunk Processing
+File: chunk_processing.py
+Description: API to divide and work on specific chunks of the image. This involves ImageProcessor class object creation with several functionalities to apply on chunks.
     
     The following are the functions offered:
         - def __init__(self, original_image_path)
