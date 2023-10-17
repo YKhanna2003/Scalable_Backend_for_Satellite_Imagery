@@ -36,8 +36,8 @@ Description: API to allow the user to apply filters on chunks or whole image.
 Description: Satellite Imagery downloading facility to get the Multi-Band Imagery based on Geographical Information provided by the user.
     
     File:  
-    1.  multi_band_download.py
-    2.  rgb_download.py
+        1.  multi_band_download.py
+        2.  rgb_download.py
     
 
 Refer to the API folder for more detailed documentation.
@@ -48,7 +48,7 @@ This script is released under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
 
-These scripts utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.
+These scripts utilizes the geopy library for location data retrieval and the opencv-python library for image manipulation.  
 Source for USGS API:- https://github.com/yannforget/landsatxplore
 
 Feel free to contribute to this project, report issues, or suggest improvements.
