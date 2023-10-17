@@ -33,12 +33,12 @@ Description: API to allow the user to apply filters on chunks or whole image.
         10. def motion_blur(input_image_path, output_image_path, kernel_size):
 
 ### Multi-Spectral Satellite Image
+Description: Satellite Imagery downloading facility to get the Multi-Band Imagery based on Geographical Information provided by the user.
     
     File:  
     1.  multi_band_download.py
     2.  rgb_download.py
     
-    Description: Satellite Imagery downloading facility to get the Multi-Band Imagery based on Geographical Information provided by the user.
 
 Refer to the API folder for more detailed documentation.
 
