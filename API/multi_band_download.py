@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from shapely.geometry import Polygon
 from landsatxplore.earthexplorer import EarthExplorer
+import os
 
 class Multi_Band:
     def __init__(self, username, password):
@@ -11,7 +12,14 @@ class Multi_Band:
         self.__sceneid=[]
         self.__sceneinfo=[]
         self.__scenedic={}
-        self.__datasetlist = ['landsat_tm_c2_l1','landsat_tm_c2_l2','landsat_etm_c2_l1','landsat_etm_c2_l2','landsat_ot_c2_l1','landsat_ot_c2_l2','landsat_ot_c2_l1','landsat_ot_c2_l2']
+        self.__datasetlist = ['landsat_tm_c2_l1',
+                              'landsat_tm_c2_l2',
+                              'landsat_etm_c2_l1',
+                              'landsat_etm_c2_l2',
+                              'landsat_ot_c2_l1',
+                              'landsat_ot_c2_l2',
+                              'landsat_ot_c2_l1',
+                              'landsat_ot_c2_l2']
 
     def __json_serial(self,obj):
         if isinstance(obj, datetime):
@@ -31,8 +39,13 @@ class Multi_Band:
         if dataset_name not in self.__datasetlist:
             print("Incorrect Dataset Query")
             return
-        api = API(self.__username, self.__password)
-        self.__sceneinfo = api.search(dataset_name,self.__latitude,self.__longitude,self.__start_date,self.__end_date,self.__max_cloud_cover)
+        api = API(username=self.__username, password=self.__password)
+        self.__sceneinfo = api.search(dataset=dataset_name,
+                                    latitude=self.__latitude,
+                                    longitude=self.__longitude,
+                                    start_date=self.__start_date,
+                                    end_date=self.__end_date,
+                                    max_cloud_cover=self.__max_cloud_cover)
         for scene in self.__sceneinfo:
             if scene['landsat_scene_id'] not in self.__sceneid:  
                 self.__sceneid.append(scene['landsat_scene_id'])
@@ -98,12 +111,47 @@ class Multi_Band:
                 print("Invalid input. Please enter a number.")
 
     def download_scene(self,scene_id,output_dir):
-        ee = EarthExplorer(self.__username, self.__password)
-        ee.download(scene_id, output_dir)
-        ee.logout()
+        try:
+            ee = EarthExplorer(self.__username, self.__password)
+            ee.download(scene_id, output_dir)
+            ee.logout()
+        except Exception as ex:
+            # Handle other exceptions
+            print("Exception Occured for {}".format(scene_id))
+            return
+        else:
+            # Code to run when no exceptions occur
+            print("Download Completed Successfully for {}".format(scene_id))
 
     def return_all_scene_info(self):
         return self.__scenedic
+    
+    def return_all_scene_id(self):
+        return self.__sceneid
+    
+    def json_image_reg_file_path(self,scene_id,json_file_path):
+        if scene_id not in self.__scenedic:
+            print("Scene ID not available")
+            return
+        data=self.__scenedic[scene_id]
+        if json_file_path.endswith(".json"):
+            pass
+        else:
+            json_file_path=json_file_path+".json"
+
+        with open(json_file_path, 'w') as json_file:
+            json.dump(data, json_file, default=self.__json_serial,indent=4)
+        print(f'Data has been written to {json_file_path}')
+
+    def image_registraton(self,json_data_dir,image_data_dir):
+        if not os.path.exists(json_data_dir):
+            os.makedirs(json_data_dir)
+
+        for scene_id in self.__sceneid:
+            file_path = os.path.join(json_data_dir, scene_id)
+            image_path = os.path.join(image_data_dir, scene_id)
+            self.json_image_reg_file_path(scene_id,file_path)
+            self.download_scene(scene_id=scene_id,output_dir=image_path)
 
 # Usage Example
 # username="enter_username_here"
