@@ -4,7 +4,7 @@ from API import multi_band_download
 import cv2
 
 def filter_usage():
-    Image_File_Path = "./example.jpg"
+    Image_File_Path = "./example.png"
     arr=image_filter.array_image(Image_File_Path,-1)
     image_filter.salt_and_pepper(Image_File_Path,"output2.jpg")
     image_filter.array_image(Image_File_Path,1,True)
@@ -16,7 +16,7 @@ def filter_usage():
     image_filter.motion_blur(Image_File_Path,"output8.jpg",20)
 
 def chunk_processing_usage():
-    img = chunk.ImageProcessor("example.jpg")
+    img = chunk.ImageProcessor("example.png")
     print(img.divide_into_chunks(100))
     def custom_filter(image):
         # Apply a custom filter (e.g., grayscale)
@@ -46,4 +46,4 @@ def multi_band_download_usage():
     m.download_scene(scene_id,"./data")
 
 if __name__ == "__main__":
-    multi_band_download_usage()
+    chunk_processing_usage()
