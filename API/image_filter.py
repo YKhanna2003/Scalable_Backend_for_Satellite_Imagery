@@ -50,6 +50,7 @@ def salt_and_pepper(input_image_path,output_image_path):
     columns = len(img[0])
     salt_img=add_noise(img)
     cv2.imwrite(output_image_path, salt_img)
+    return salt_img
 
 # Function:- Custom Filter Application
 # Input:- File Addresses of input and output images, custom filter in text file
